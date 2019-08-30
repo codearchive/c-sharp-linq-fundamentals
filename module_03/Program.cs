@@ -20,13 +20,10 @@ namespace module_03
                 new Employee { Id = 3, Name = "Alex" }
             };
 
-            Console.WriteLine(sales.Count());
-            IEnumerator<Employee> enumerator = developers.GetEnumerator();
-
-            while (enumerator.MoveNext())
+            foreach (var employee in developers.Where(e => e.Name.StartsWith("S")))
             {
-                if (enumerator.Current != null) Console.WriteLine(enumerator.Current.Name);
+                Console.WriteLine(employee.Name);
             }
-        }        
+        }
     }
 }
