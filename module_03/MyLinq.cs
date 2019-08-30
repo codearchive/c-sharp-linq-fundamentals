@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace module_03.Linq
 {
@@ -10,11 +6,12 @@ namespace module_03.Linq
     {
         public static int Count<T>(this IEnumerable<T> sequence)
         {
-            var count = 0;
+            int count = 0;
             foreach (var item in sequence)
             {
                 count += 1;
             }
+
             return count;
         }
     }

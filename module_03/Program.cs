@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+//using module_03.Linq;
+using System.Linq;
 
 namespace module_03
 {
@@ -18,6 +20,7 @@ namespace module_03
                 new Employee { Id = 3, Name = "Alex" }
             };
 
+            Console.WriteLine(sales.Count());
             IEnumerator<Employee> enumerator = developers.GetEnumerator();
 
             while (enumerator.MoveNext())
