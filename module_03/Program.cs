@@ -21,11 +21,17 @@ namespace module_03
             };
 
             var query = developers.Where(e => e.Name.Length == 5)
-                                  .OrderBy(e => e.Name);
+                .OrderBy(e => e.Name);
 
-            foreach (var employee in query)
+            var query2 = from developer in developers
+                where developer.Name.Length == 5
+                orderby developer.Name
+                select developer.Name;
+
+
+            foreach (var employee in query2)
             {
-                Console.WriteLine(employee.Name);
+                Console.WriteLine(employee);
             }
         }
     }
