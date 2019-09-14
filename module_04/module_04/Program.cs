@@ -17,7 +17,9 @@ namespace module_04
                 new Movie { Title = "The King's Speech", Rating = 8.0f, Year = 2010 }
             };
 
-            var query = movies.Filter(m => m.Year > 2000).Take(1);
+            var query = movies.Filter(m => m.Year > 2000).ToList(); // Using query variable without Deferred Execution
+        
+            Console.WriteLine(query.Count);
 
             var enumerator = query.GetEnumerator();
             while (enumerator.MoveNext())
